@@ -1,0 +1,41 @@
+.TH PRINTF 3 "November 2024" "Holberton School" "Custom Library Functions"
+.SH NAME
+.B _printf
+- Prints formatted data
+.SH SYNOPSIS
+.B #include "main.h"
+.B int _printf(const char *
+.I format
+.B , ...)
+.SH DESCRIPTION
+.B _printf()
+-_printf() is a custom implementation of printf() that prints formatted data. It can print various data types, such as characters, strings, integers and decimals.
+.SH RETURN VALUE
+Return the number of characters printed, except the null byte placed at the end of the strings.If an error occurs, return -1.
+.SH SPECIFIERS
+The specifiers are characters put after a % sign. They specify which format is required to apply to the data.
+.TP
+.B c
+Prints a single character
+.TP
+.B b
+prints unsigned int in binary
+.TP
+.B s
+Prints a string, this is an array of characters
+.TP
+.B d
+Prints a decimal
+.TP
+.B i
+Prints an integer
+.SH EXAMPLE
+Print the name, last name and age of a person: name and last name are pointers to strings and age is  integer:
+#include "main.h"
+_printf("%s, %s %d, \n", name, last_name, age);
+.SH SEE ALSO
+.I printf(3)
+.SH BUGS
+No detected bugs.
+.SH AUTHOR
+Desara Baroti and Mario Melengu

@@ -16,7 +16,7 @@ int handle_char(va_list args)
 	c = va_arg(args, int);
 	_putchar(c);
 
-	return(1);
+	return (1);
 }
 
 /**
@@ -52,6 +52,7 @@ int handle_string(va_list args)
 int handle_int(va_list args)
 {
 	long int number = (long int)va_arg(args, int);
+
 	return (print_number(number));
 }
 
@@ -69,7 +70,7 @@ int print_number(long int number)
 	if (number < 0)
 	{
 		_putchar('-');
-		count ++;
+		count++;
 		number = -number;
 	}
 

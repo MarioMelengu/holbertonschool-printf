@@ -3,6 +3,12 @@
 
 #include <stdarg.h>
 
+/**
+ * struct specifier_t - structure containing
+ * @specifier: type to print
+ * @print: function to print
+ */
+
 typedef struct specifier_t
 {
 	char *specifier;

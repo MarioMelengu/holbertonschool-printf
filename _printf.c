@@ -2,6 +2,13 @@
 #include <stdarg.h>
 #include <stddef.h>
 
+/**
+ * find_handler - manages the calling function
+ * @format_char: character to check
+ * @specifiers: array of checkers
+ * Return: NULL
+ */
+
 int (*find_handler(char format_char, specifier_t specifiers[]))(va_list)
 {
 	unsigned int i = 0;
@@ -16,6 +23,14 @@ int (*find_handler(char format_char, specifier_t specifiers[]))(va_list)
 	}
 	return (NULL);
 }
+
+/**
+ * process_format - string to be scanned
+ * @format: points to the string
+ * @specifiers: array of checkers
+ * @args: pointer to the list of the variadic arguments
+ * Return: len
+ */
 
 int process_format(const char *format, va_list args, specifier_t specifiers[])
 {
@@ -51,7 +66,7 @@ int process_format(const char *format, va_list args, specifier_t specifiers[])
 				}
 			}
 		}
-		else 
+		else
 		{
 			_putchar(format[i]);
 			len++;
@@ -61,6 +76,12 @@ int process_format(const char *format, va_list args, specifier_t specifiers[])
 	return (len);
 }
 
+/**
+* _printf - prints input
+* @format: point to respective input
+* Return: len
+*/
+
 int _printf(const char *format, ...)
 {
 	va_list args;
@@ -69,10 +90,12 @@ int _printf(const char *format, ...)
 	specifier_t specifiers[] = {
 		{"c", handle_char},
 		{"s", handle_string},
+		{"d", handle_int},
+		{"i", handle_int},
 		{NULL, NULL}
 	};
 
-	if (format == NULL || format[0] == '%' && format[1] == '\0')
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 	{
 		return (-1);
 	}
@@ -80,4 +103,6 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	len = process_format(format, args, specifiers);
 	va_end(args);
+
+	return (len);
 }
