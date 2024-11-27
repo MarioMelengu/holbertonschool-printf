@@ -19,5 +19,6 @@ int process_format(const char *format, va_list args, specifier_t specifiers[]);
 int handle_char(va_list args);
 int handle_string(va_list args);
 int handle_int(va_list args);
+int print_number(long int number);
 
 #endif

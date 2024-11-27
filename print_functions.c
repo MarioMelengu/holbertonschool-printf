@@ -43,13 +43,13 @@ int handle_string(va_list args)
 }
 
 /**
-* print_int - Handles the %d specifier in _printf
+* handle_int - Handles the %d specifier in _printf
 * @args: A va_list containing the numbers to print
 *
 * Return: The number of numbers printed
 */
 
-int print_int(va_list args)
+int handle_int(va_list args)
 {
 	long int number = (long int)va_arg(args, int);
 	return (print_number(number));
