@@ -52,14 +52,14 @@ _printf("%d + %d = %d\n", 1, 2, 3); /* prints "1 + 2 = 3" */
 ```
 The following table shows the supported format specifiers and their meanings:
 
-```
+
 | Specifier | Output                     | Example            |
 |-----------|----------------------------|--------------------|
 | `%c`      | Single character           | `a`                |
 | `%s`      | String of characters       | `Holberton Albania`|
 | `%d` or `%i` | Signed decimal integer  | `1024`, `-1024`    |
-```
 
+```c
     #include "main.h"
 
     int main(void)
@@ -77,7 +77,7 @@ The following table shows the supported format specifiers and their meanings:
     _printf("This is a decimal: %.2f\n", d); /* prints "This is a decimal: 3.14" */
     return (0);
      }
-
+```
 ## Files contained in this repository
 Name	Information
 
